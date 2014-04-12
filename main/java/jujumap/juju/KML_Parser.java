@@ -1,6 +1,5 @@
 package jujumap.juju;
 
-import android.util.Log;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -35,8 +34,6 @@ public class KML_Parser extends DefaultHandler {
 
         String elementName = ("".equals (localName)) ? qName : localName;
 
-        //System.out.println (folderDepth + " " + elementName);
-
         if (elementName.equals ("Folder")) folderDepth = 1;
 
         if (elementName.equals ("name")) nameCount ++;
@@ -54,8 +51,6 @@ public class KML_Parser extends DefaultHandler {
         String elementName = ("".equals (localName)) ? qName : localName;
 
         if ( (elementName.equals ("coordinates")) && (folderDepth == 0)) {
-
-            //System.out.println (">" + content + "<");
 
             gps_track.addPath (content);
         }
