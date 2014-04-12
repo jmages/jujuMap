@@ -4,8 +4,11 @@
 
     <string name="app_name">jüjüMap</string>
 
-    <string name="load_track">load Track</string>
-    <string name="loading_track">loading Trackfile </string>
+    <string name="load_track">load KML</string>
+
+    <string name="save_kml">save KML</string>
+
+    <string name="del_kml">del KML</string>
 
     <string name="zoom_unchecked">autoZoom</string>
     <string name="zoom_checked">autoZoom \u2714</string>

@@ -192,6 +192,20 @@ public class JujuMap extends Activity implements LocationListener {
 
                 return true;
 
+            case R.id.save_kml:
+
+                return true;
+
+            case R.id.del_kml:
+
+                track_new.clear();
+
+                track_new_Overlay.clearPath();
+
+                mapView.postInvalidate();
+
+                return true;
+
             default:
 
                 return super.onOptionsItemSelected(item);
@@ -205,6 +219,16 @@ public class JujuMap extends Activity implements LocationListener {
         else {
             menu.findItem(R.id.show_track).setEnabled(true);
             menu.findItem(R.id.load_kml).setEnabled(false);
+        }
+
+        if (track_new.size() == 0) menu.findItem(R.id.save_kml).setEnabled(false);
+        else {
+            menu.findItem(R.id.save_kml).setEnabled(true);
+        }
+
+        if (track_new.size() == 0) menu.findItem(R.id.del_kml).setEnabled(false);
+        else {
+            menu.findItem(R.id.del_kml).setEnabled(true);
         }
 
         if (pois_kml.size() == 0) menu.findItem(R.id.show_pois).setEnabled(false);
