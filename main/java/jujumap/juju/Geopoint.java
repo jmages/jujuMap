@@ -5,29 +5,23 @@ import java.util.Arrays;
 
 public class Geopoint {
 
-    String name     = "";
-
     float lon;
     float lat;
     float alt;
+
+    long time;
 
     public Geopoint (String rawTrackPoint) {
 
         splitRawTrackPoint (rawTrackPoint);
     }
 
-    public Geopoint (String name, String rawTrackPoint) {
+    public Geopoint (double lat, double lon, long time) {
 
-        this.name = name;
-
-        splitRawTrackPoint (rawTrackPoint);
-    }
-
-    public Geopoint (double lat, double lon) {
-
-        name = "";
         this.lat = (float) lat;
         this.lon = (float) lon;
+
+        this.time = time;
     }
 
     private void splitRawTrackPoint (String rawTrackPoint) {

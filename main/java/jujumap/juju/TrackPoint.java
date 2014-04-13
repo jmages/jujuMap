@@ -7,8 +7,8 @@ public class TrackPoint extends Geopoint {
         super(rawTrackPoint);
     }
 
-    public TrackPoint (double lat, double lon) {
+    public TrackPoint (double lat, double lon, long time) {
 
-        super(lat,lon);
+        super(lat, lon, time);
     }
 }

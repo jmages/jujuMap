@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class PlacePoint extends Geopoint {
 
+    String name     = "";
+
     String url      = "";
     String ortsInfo = "";
     String geo      = "";
@@ -13,7 +15,9 @@ public class PlacePoint extends Geopoint {
 
     public PlacePoint (String name, String rawTrackPoint, String description) {
 
-        super(name, rawTrackPoint);
+        super(rawTrackPoint);
+
+        this.name = name;
 
         splitDescription (description);
 

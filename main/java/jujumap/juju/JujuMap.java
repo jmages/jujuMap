@@ -322,15 +322,19 @@ public class JujuMap extends Activity implements LocationListener {
 
         currentLocation = new GeoPoint(location);
 
-        mapController.setCenter(currentLocation);
+        if (autoZoom) {
 
-        mapController.setZoom(16);
+            mapController.setCenter(currentLocation);
+
+            mapController.setZoom(16);
+        }
 
         locationOverlay.setLocation(currentLocation);
 
-        track_new.add( new TrackPoint (
+        track_new.addTP(
                 location.getLatitude(),
-                location.getLongitude()));
+                location.getLongitude(),
+                location.getTime());
 
         track_new_Overlay.addPoint(currentLocation);
 

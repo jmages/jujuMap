@@ -15,6 +15,9 @@ public class Track extends ArrayList <TrackPoint> {
     float minAlt = 10000;
     float maxAlt = -1000;
 
+    long minTime = 10000;
+    long maxTime =     0;
+
     private BoundingBoxE6 bBox;
 
     public Track() {}
@@ -39,6 +42,16 @@ public class Track extends ArrayList <TrackPoint> {
 
             this.add (tp);
         }
+    }
+
+    public void addTP (double lat, double lon, long time) {
+
+        if (time < minTime) minTime = time;
+        if (time > maxTime) maxTime = time;
+
+        TrackPoint tp = new TrackPoint (lat, lon, time);
+
+        add(tp);
     }
 
     BoundingBoxE6 get_bBox () {
