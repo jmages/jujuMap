@@ -113,6 +113,32 @@ public class JujuMap extends Activity implements LocationListener {
         return true;
     }
 
+    private void writeToSDFile() {
+
+        File sdcard = android.os.Environment.getExternalStorageDirectory();
+
+        File file = new File(sdcard,"/osmdroid/" + "test.txt");
+
+        try {
+
+            FileOutputStream f = new FileOutputStream(file);
+
+            PrintWriter pw = new PrintWriter(f);
+
+            pw.println("Hi , How are you");
+            pw.println("Hello");
+
+            pw.flush();
+            pw.close();
+            f.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /*public String readFromFile(String filename) {
 
         File sdcard = Environment.getExternalStorageDirectory();
@@ -162,6 +188,8 @@ public class JujuMap extends Activity implements LocationListener {
 
             case R.id.auto_zoom:
 
+                writeToSDFile();
+
                 autoZoom ^= true;
 
                 return true;
@@ -193,6 +221,8 @@ public class JujuMap extends Activity implements LocationListener {
                 return true;
 
             case R.id.save_kml:
+
+                writeToSDFile();
 
                 return true;
 
