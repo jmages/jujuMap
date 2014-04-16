@@ -1,5 +1,6 @@
 package jujumap.juju;
 
+import android.util.Log;
 import org.osmdroid.util.BoundingBoxE6;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Track extends ArrayList <TrackPoint> {
     long minTime = 10000;
     long maxTime =     0;
 
-    private BoundingBoxE6 bBox;
+    BoundingBoxE6 bBox;
 
     public Track() {}
 
@@ -54,7 +55,21 @@ public class Track extends ArrayList <TrackPoint> {
         add(tp);
     }
 
-    BoundingBoxE6 get_bBox () {
+    @Override
+    public String toString () {
+
+        StringBuilder sb = new StringBuilder();
+
+
+        for (TrackPoint tp : this ) {
+
+            sb.append(tp.lat + "," + tp.lon + "," + tp.alt + "" + tp.time + "\n");
+        }
+
+        return sb.toString();
+    }
+
+    public BoundingBoxE6 get_bBox () {
 
         bBox = new BoundingBoxE6 (maxLat, maxLon, minLat, minLon);
 

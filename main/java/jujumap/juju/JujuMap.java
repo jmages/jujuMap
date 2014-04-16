@@ -113,11 +113,13 @@ public class JujuMap extends Activity implements LocationListener {
         return true;
     }
 
-    private void writeToSDFile() {
+    private void writeToSDFile(String s) {
 
         File sdcard = android.os.Environment.getExternalStorageDirectory();
 
-        File file = new File(sdcard,"/osmdroid/" + "test.txt");
+        String fName = track_new.minTime + " - " + track_new.maxTime + ".txt";
+
+        File file = new File(sdcard,"/osmdroid/" + fName);
 
         try {
 
@@ -125,8 +127,7 @@ public class JujuMap extends Activity implements LocationListener {
 
             PrintWriter pw = new PrintWriter(f);
 
-            pw.println("Hi , How are you");
-            pw.println("Hello");
+            pw.println("s");
 
             pw.flush();
             pw.close();
@@ -188,8 +189,6 @@ public class JujuMap extends Activity implements LocationListener {
 
             case R.id.auto_zoom:
 
-                writeToSDFile();
-
                 autoZoom ^= true;
 
                 return true;
@@ -222,7 +221,7 @@ public class JujuMap extends Activity implements LocationListener {
 
             case R.id.save_kml:
 
-                writeToSDFile();
+                writeToSDFile(track_new.toString());
 
                 return true;
 
