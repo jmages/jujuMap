@@ -127,7 +127,7 @@ public class JujuMap extends Activity implements LocationListener {
 
             PrintWriter pw = new PrintWriter(f);
 
-            pw.println("s");
+            pw.println(track_new.toString());
 
             pw.flush();
             pw.close();

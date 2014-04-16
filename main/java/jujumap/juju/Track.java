@@ -16,8 +16,8 @@ public class Track extends ArrayList <TrackPoint> {
     float minAlt = 10000;
     float maxAlt = -1000;
 
-    long minTime = 10000;
-    long maxTime =     0;
+    long minTime = 1397630887000L;
+    long maxTime = 0;
 
     BoundingBoxE6 bBox;
 
