@@ -63,7 +63,7 @@ public class Track extends ArrayList <TrackPoint> {
 
         for (TrackPoint tp : this ) {
 
-            sb.append(tp.lat + "," + tp.lon + "," + tp.alt + "" + tp.time + "\n");
+            sb.append(tp.lat + "," + tp.lon + "," + tp.alt + "," + tp.time + "\n");
         }
 
         return sb.toString();
