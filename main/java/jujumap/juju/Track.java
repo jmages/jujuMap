@@ -45,12 +45,13 @@ public class Track extends ArrayList <TrackPoint> {
         }
     }
 
-    public void addTP (double lat, double lon, long time) {
+    public void addTP(double lat, double lon, double alt, float accuracy, double speed, double bearing, long time) {
+
 
         if (time < minTime) minTime = time;
         if (time > maxTime) maxTime = time;
 
-        TrackPoint tp = new TrackPoint (lat, lon, time);
+        TrackPoint tp = new TrackPoint (lat, lon, alt, accuracy, speed, bearing, time);
 
         add(tp);
     }
@@ -63,7 +64,10 @@ public class Track extends ArrayList <TrackPoint> {
 
         for (TrackPoint tp : this ) {
 
-            sb.append(tp.lat + "," + tp.lon + "," + tp.alt + "," + tp.time + "\n");
+            sb.append(
+                    tp.lon + "," + tp.lat + "," + tp.alt + "," +
+                    tp.accuracy + "," + tp.speed + "," + tp.bearing + "," +
+                    tp.time + "\n");
         }
 
         return sb.toString();

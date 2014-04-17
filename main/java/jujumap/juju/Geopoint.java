@@ -9,6 +9,10 @@ public class Geopoint {
     float lat;
     float alt;
 
+    float  accuracy;
+    double speed;
+    double bearing;
+
     long time;
 
     public Geopoint (String rawTrackPoint) {
@@ -16,10 +20,15 @@ public class Geopoint {
         splitRawTrackPoint (rawTrackPoint);
     }
 
-    public Geopoint (double lat, double lon, long time) {
+    public Geopoint(double lat, double lon, double alt, float accuracy, double speed, double bearing, long time) {
 
         this.lat = (float) lat;
         this.lon = (float) lon;
+        this.alt = (float) alt;
+
+        this.accuracy = accuracy;
+        this.speed = speed;
+        this.bearing = bearing;
 
         this.time = time;
     }

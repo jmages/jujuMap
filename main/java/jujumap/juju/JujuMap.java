@@ -363,6 +363,10 @@ public class JujuMap extends Activity implements LocationListener {
         track_new.addTP(
                 location.getLatitude(),
                 location.getLongitude(),
+                location.getAltitude(),
+                location.getAccuracy(),
+                location.getSpeed(),
+                location.getBearing(),
                 location.getTime());
 
         track_new_Overlay.addPoint(currentLocation);
