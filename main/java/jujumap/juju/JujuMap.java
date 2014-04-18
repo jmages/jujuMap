@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class JujuMap extends Activity implements LocationListener {
 
-    MapView       mapView;
+    MapView        mapView;
 	IMapController mapController;
 
     GeoPoint currentLocation = new GeoPoint(49.598,11.005508);
@@ -139,33 +139,6 @@ public class JujuMap extends Activity implements LocationListener {
             e.printStackTrace();
         }
     }
-
-    /*public String readFromFile(String filename) {
-
-        File sdcard = Environment.getExternalStorageDirectory();
-
-        File file = new File(sdcard,"/osmdroid/" + filename);
-
-        StringBuilder text = new StringBuilder();
-
-        try {
-
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line;
-
-            while ((line = br.readLine()) != null) {
-
-                text.append(line);
-                text.append('\n');
-            }
-        }
-        catch (IOException e) {
-
-            Log.e(TAG, "Can not read file: " + e.toString());
-        }
-
-        return text.toString();
-    }*/
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
