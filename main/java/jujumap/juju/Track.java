@@ -62,12 +62,9 @@ public class Track extends ArrayList <TrackPoint> {
         StringBuilder sb = new StringBuilder();
 
 
-        for (TrackPoint tp : this ) {
+        for (TrackPoint tp : this) {
 
-            sb.append(
-                    tp.lon + "," + tp.lat + "," + tp.alt + "," +
-                    tp.accuracy + "," + tp.speed + "," + tp.bearing + "," +
-                    tp.time + "\n");
+            sb.append(tp.lon).append(",").append(tp.lat).append(",").append(tp.alt).append(",").append(tp.accuracy).append(",").append(tp.speed).append(",").append(tp.bearing).append(",").append(tp.time).append("\n");
         }
 
         return sb.toString();
