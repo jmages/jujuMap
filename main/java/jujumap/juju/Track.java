@@ -78,4 +78,21 @@ public class Track extends ArrayList <TrackPoint> {
 
         return bBox;
     }
+
+    @Override
+    public void clear() {
+
+        super.clear();
+
+        minLon = +180;
+        maxLon = -180;
+        minLat =  +90;
+        maxLat =  -90;
+
+        minAlt = 10000;
+        maxAlt = -1000;
+
+        minTime = 1397630887000L;
+        maxTime = 0;
+    }
 }
