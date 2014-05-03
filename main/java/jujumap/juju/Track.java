@@ -19,10 +19,6 @@ public class Track extends ArrayList <TrackPoint> {
     long minTime = 1397630887000L;
     long maxTime = 0;
 
-    BoundingBoxE6 bBox;
-
-    public Track() {}
-
     public void addPath (String rawPath) {
 
         TrackPoint tp;
@@ -74,7 +70,7 @@ public class Track extends ArrayList <TrackPoint> {
 
     public BoundingBoxE6 get_bBox () {
 
-        bBox = new BoundingBoxE6 (maxLat, maxLon, minLat, minLon);
+        BoundingBoxE6 bBox = new BoundingBoxE6 (maxLat, maxLon, minLat, minLon);
 
         return bBox;
     }

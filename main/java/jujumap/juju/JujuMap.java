@@ -101,6 +101,18 @@ public class JujuMap extends Activity implements LocationListener {
             public void onClick(DialogInterface dialog, int which) {
             }
         });
+
+        alert.setNegativeButton("Prev", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
+        alert.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
     }
 
     @Override
