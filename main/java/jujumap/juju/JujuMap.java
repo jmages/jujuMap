@@ -36,7 +36,7 @@ public class JujuMap extends Activity implements LocationListener {
     MapView        mapView;
 	IMapController mapController;
 
-    GeoPoint currentLocation = new GeoPoint(49.598,11.005508);
+    GeoPoint currentLocation = new GeoPoint(49.598,11.005);
 
     Track track_kml = new Track();
     POIs  pois_kml  = new POIs();
